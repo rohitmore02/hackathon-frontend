@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from 'ngx-flexible-layout';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

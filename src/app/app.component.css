@@ -1,0 +1,40 @@
+.mainContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #958484;
+}
+
+.reqContainer,
+.resContainer, .inputContainer {
+    padding: 1rem;
+    background-color: #f0e8e8;
+}
+
+.inputField {
+    border: none;
+    width: 100%;
+    display: flex;
+    outline: none;
+    background-color: transparent;
+}
+
+.sendButton {
+    width: 1.5rem;
+}
+
+.reqResContainer {
+    padding: 2rem;
+    overflow-y: scroll;
+}
+
+.reqResContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.arrowIcon {
+    margin: 0 !important;
+}
