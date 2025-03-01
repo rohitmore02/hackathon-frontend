@@ -1,21 +1,76 @@
 <div class="mainContainer" fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="20vw" class="sidePanel" fxLayout="column">
+    <div>
+      <div *ngFor="let history of sidePanelHistory">
+        <h4>{{history.title}}</h4>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <span class="sessionButton" *ngFor="let session of history.sessions">{{session.title}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="80vw" fxLayoutAlign="center center">
+    <mat-card fxFlex="60vw" fxLayout="column" fxLayoutGap="2rem" style="margin: 2rem;">
+      <div class="chat-header">
+        <span>🤖 Chatbot</span>
+        <!-- <button class="toggle-btn">▼</button> -->
+      </div>
+      <div fxFlex="50vh" class="reqResContainer" fxLayout="column" fxLayoutGap="2rem" class="chat-box" #scrollContainer>
+        <div *ngFor="let message of reqResArray" [ngClass]="{'user': message.sender === 'user', 'bot': message.sender === 'bot'}">
+          <img *ngIf="message.sender === 'bot'" class="avatar" src="data:image/svg+xml,<svg width='40' height='40' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='10' fill='%236B46C1'/><circle cx='12' cy='10' r='3' fill='white'/><path d='M7 18c0-3 2.5-5 5-5s5 2 5 5' fill='white'/></svg>" class="avatar" alt="user" />
+          <span class="message">{{ message.text }}</span>
+        </div>
+      </div>
+      <div fxLayout="column">
+        <div fxFlex="15vh" fxLayoutAlign="space-around center" class="inputContainer">
+          <input type="text" [formControl]="textControl" placeholder="Message..." (keyup.enter)="getResponse()" />
+            <button (click)="getResponse()" class="sendbutton">
+              Send
+            </button>
+        </div>
+      </div>
+      <!-- <mat-card fxFlex="15vh" fxLayout="row" class="inputContainer" fxLayoutAlign="space-around center">
+        <mat-form-field appearance="outline">
+          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+        <textarea rows="4" class="inputField" [formControl]="textControl" placeholder="Enter text here..." (keydown.enter)="onClick()" fxFlex="70"></textarea>
+        <button mat-raised-button (click)="onClick()" fxLayoutAlign="center center"><mat-icon class="arrowIcon">arrow_upward</mat-icon></button>
+      </mat-card> -->
+    </mat-card>
+  </div>
+</div>
+<!-- 
+<div class="mainContainer" fxLayout="column" fxLayoutAlign="center center">
+
+
   <div fxLayout="column" fxFlex="70" fxLayoutGap="2rem">
-    <div fxFlex="70vh" class="reqResContainer" fxLayout="column" fxLayoutGap="2rem" #scrollContainer>
+    
+    <div fxFlex="70vh" class="reqResContainer" fxLayout="column" fxLayoutGap="1rem" #scrollContainer>
       <div *ngFor="let reqRes of reqResArray" fxLayout="column" fxLayoutGap="10px">
+        
         <div fxLayout="row" fxLayoutAlign="end">
           <mat-card fxFlex="50" class="reqContainer">
             <span>{{reqRes.req}}</span>
           </mat-card>
         </div>
+
         <mat-card class="resContainer" fxLayout="column" fxLayoutGap="1rem">
-          <span>{{reqRes.res}}, {{reqRes.id}}</span>
-          <button mat-raised-button style="width: 15rem;">Click to download excel</button>
+          <span>{{reqRes.res}}</span>
+          <button mat-raised-button>Download Excel</button>
         </mat-card>
       </div>
     </div>
+
     <mat-card fxFlex="15vh" fxLayout="row" class="inputContainer" fxLayoutAlign="space-around center">
-      <textarea rows="4" class="inputField" [formControl]="textControl" placeholder="Enter text here..." (keydown.enter)="onClick()" fxFlex="70"></textarea>
-      <button mat-raised-button (click)="onClick()" fxLayoutAlign="center center"><mat-icon class="arrowIcon">arrow_upward</mat-icon></button>
+      <textarea rows="3" class="inputField" [formControl]="textControl" placeholder="Enter text..." (keydown.enter)="onClick()" fxFlex="70"></textarea>
+      <button mat-raised-button (click)="onClick()" [disabled]="isLoading">
+        <mat-icon *ngIf="!isLoading">arrow_upward</mat-icon>
+        <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+      </button>
     </mat-card>
+
+    <button mat-stroked-button color="warn" (click)="clearChat()">Clear Chat</button>
+
   </div>
 </div>
+ -->

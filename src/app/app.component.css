@@ -1,17 +1,10 @@
 .mainContainer {
     height: 100vh;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color: #958484;
 }
 
 .reqContainer,
 .resContainer, .inputContainer {
     padding: 1rem;
-    background-color: #f0e8e8;
 }
 
 .inputField {
@@ -27,7 +20,7 @@
 }
 
 .reqResContainer {
-    padding: 2rem;
+    padding: 2rem 2rem 0;
     overflow-y: scroll;
 }
 
@@ -37,4 +30,124 @@
 
 .arrowIcon {
     margin: 0 !important;
+}
+
+.inputContainer {
+  /* margin: 0 2rem 2rem; */
+  border-top: 1px solid #ddd;
+}
+
+.inputContainer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+mat-card {
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sendbutton{
+    width: 76px;
+    height: 40px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-header {
+    /* background: #6B46C1; */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,70,193,1) 50%, rgba(0,0,255,1) 100%);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+    color: white;
+    margin: 1rem;
+}
+
+.chat-box {
+    height: 65vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem;
+}
+
+.chat-box::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-box div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.user {
+    justify-content: flex-end;
+}
+
+.bot {
+    justify-content: flex-start;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.user .message {
+    background: #6B46C1;
+    color: white;
+    border-radius: 12px 12px 0 12px;
+}
+
+.bot .message {
+    background: #E9EAF2;
+    color: black;
+    border-radius: 12px 12px 12px 0;
+}
+
+.sidePanel {
+    height: 100vh;
+    background-color: #422a83;
+    padding: 2rem;
+    color: white;
+}
+
+.sessionButton {
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 5px;
+}
+
+.sessionButton:hover {
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

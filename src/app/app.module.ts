@@ -11,6 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from 'ngx-flexible-layout';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatInputModule} from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatCardModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
