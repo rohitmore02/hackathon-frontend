@@ -17,9 +17,7 @@
       <div fxFlex="50vh" class="reqResContainer" fxLayout="column" fxLayoutGap="1rem" class="chat-box" #scrollContainer>
         <div *ngFor="let message of reqResArray"
           [ngClass]="{'user': message.sender === 'user', 'bot': message.sender === 'bot'}">
-          <img *ngIf="message.sender === 'bot'" class="avatar"
-            src="data:image/svg+xml,<svg width='40' height='40' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='10' fill='%236B46C1'/><circle cx='12' cy='10' r='3' fill='white'/><path d='M7 18c0-3 2.5-5 5-5s5 2 5 5' fill='white'/></svg>"
-            class="avatar" alt="user" />
+          <img *ngIf="message.sender === 'bot'" class="avatar" src="https://ik.imagekit.io/rohit0203/robot_ECAjGpFc6.png?updatedAt=1740982869382" alt="user" />
           <span class="message">{{ message.text }}</span>
         </div>
       </div>
