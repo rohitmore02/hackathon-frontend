@@ -1,5 +1,5 @@
 <div class="mainContainer" fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex="20vw" class="sidePanel" fxLayout="column">
+  <!-- <div fxFlex="20vw" class="sidePanel" fxLayout="column">
     <div>
       <div *ngFor="let history of sidePanelHistory">
         <h4>{{history.title}}</h4>
@@ -8,11 +8,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div fxFlex="80vw" fxLayoutAlign="center center">
     <mat-card fxFlex="60vw" fxLayout="column" fxLayoutGap="2rem" style="margin: 2rem;">
       <div class="chat-header">
         <span>🤖 Chatbot</span>
+        <div class="binIcon" (click)="clearChat()" matTooltip="Clear chat"><mat-icon>delete_outline</mat-icon></div>
       </div>
       <div fxFlex="50vh" class="reqResContainer" fxLayout="column" fxLayoutGap="1rem" class="chat-box" #scrollContainer>
         <div *ngFor="let message of reqResArray"

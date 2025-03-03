@@ -47,8 +47,12 @@ export class AppComponent {
 
 
   ngOnInit() {
-    // let storedArray: any = JSON.parse(localStorage.getItem("reqResArray") ?? "[]");
-    // this.reqResArray = storedArray;
+    let storedArray: any = JSON.parse(localStorage.getItem("reqResArray") ?? "[]");
+    if (storedArray.length) {
+      this.reqResArray = storedArray;
+    } else {
+      localStorage.setItem("reqResArray", JSON.stringify(this.reqResArray));      
+    }
     setTimeout(() => this.scrollToBottom(false), 100);
   }
 
@@ -97,5 +101,12 @@ export class AppComponent {
         this.reqResArray[loadingIndex] = { text: 'Oops! Something went wrong.', sender: 'bot' };
       }
     );
+    localStorage.setItem("reqResArray", JSON.stringify(this.reqResArray));
+  }
+  
+  clearChat() {
+    localStorage.clear();
+    this.reqResArray = [{ text: 'Hey there 👋\nHow can I help you today?', sender: 'bot' }];
+    localStorage.setItem("reqResArray", JSON.stringify(this.reqResArray));
   }
 }
